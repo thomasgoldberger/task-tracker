@@ -1,10 +1,13 @@
-const Tasks = ({ tasks }) => { 
-    return (
-        <>
-            {tasks.map((tasks) => (
-            <h3 key= {tasks.id}>{tasks.text}</h3>))}
-        </>
-    )
-}
+import Task from "./Task";
 
-export default Tasks
+const Tasks = ({ tasks, onDelete }) => {
+  return (
+    <>
+      {tasks.map((task) => (
+        <Task key={task.id} task={task} onDelete={onDelete} />
+      ))}
+    </>
+  );
+};
+
+export default Tasks;
